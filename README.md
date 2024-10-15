@@ -1,3 +1,3 @@
 # d360
 
-A new Flutter project.
+Wersja mobila aplikacji d360
