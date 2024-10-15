@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'pages/main_page.dart';
+import 'pages/MainPage.dart';
+import 'pages/administracja/AdministracjaPage.dart';
+import 'pages/organizacja/OrganizacjaPage.dart';
+import 'pages/kadry/KadryPage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,9 +14,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: const MainPage().id,
+      initialRoute: MainPage.id,
       routes: {
-        const MainPage().id : (context) => const MainPage(),
+        MainPage.id: (context) => const MainPage(),
+        AdministracjaPage.id: (context) => const AdministracjaPage(),
+        OrganizacjaPage.id: (context) => const OrganizacjaPage(),
+        KadryPage.id: (context) => const KadryPage(),
+        // Dodaj inne trasy tutaj
       },
     );
   }
