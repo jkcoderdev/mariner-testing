@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
         AdministracjaPage.id: (context) => const AdministracjaPage(),
         OrganizacjaPage.id: (context) => const OrganizacjaPage(),
         KadryPage.id: (context) => const KadryPage(),
-        // Dodaj inne trasy tutaj
+        
       },
     );
   }

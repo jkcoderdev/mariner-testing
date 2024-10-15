@@ -11,7 +11,7 @@ import 'kadry/KadryPage.dart';
 // import 'ustawienia/UstawieniaPage.dart';
 
 class MainPage extends StatelessWidget {
-  static const String id = '/main'; // Identyfikator trasy dla MainPage
+  static const String id = '/main'; 
 
   const MainPage({super.key});
 
@@ -33,19 +33,19 @@ class MainPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('D360'), // Nagłówek aplikacji
-        backgroundColor: Colors.blueGrey, // Kolor AppBaru
+        title: const Text('D360'), 
+        backgroundColor: Colors.blueGrey, 
       ),
-      backgroundColor: Colors.grey[200], // Kolor tła aplikacji
+      backgroundColor: Colors.grey[200],
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Odstęp wokół siatki
+        padding: const EdgeInsets.all(16.0), 
         child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Dwa przyciski w wierszu
-            crossAxisSpacing: 10.0, // Odstęp w poziomie
-            mainAxisSpacing: 10.0, // Odstęp w pionie
+            crossAxisCount: 2, 
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
           ),
-          itemCount: buttons.length, // Liczba przycisków
+          itemCount: buttons.length,
           itemBuilder: (context, index) {
             return ElevatedButton(
               onPressed: () {
@@ -53,9 +53,9 @@ class MainPage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(16.0),
-                textStyle: const TextStyle(fontSize: 16), // Styl tekstu
+                textStyle: const TextStyle(fontSize: 16), 
               ),
-              child: Text(buttons[index]['label']!), // Etykieta przycisku
+              child: Text(buttons[index]['label']!),
             );
           },
         ),
