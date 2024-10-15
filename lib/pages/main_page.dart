@@ -48,6 +48,10 @@ class MainPage extends StatelessWidget {
                 itemCount: buttonLabels.length,
                 itemBuilder: (context, index) {
                   return ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                    )),
                     onPressed: () {
                       // Obsługa kliknięcia przycisku
                       print('${buttonLabels[index]} clicked');
