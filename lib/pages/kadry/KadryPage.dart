@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class KadryPage extends StatelessWidget {
-  static const String id = '/kadry'; // Identyfikator trasy
+  static const String id = '/kadry';
 
   const KadryPage({super.key});
 

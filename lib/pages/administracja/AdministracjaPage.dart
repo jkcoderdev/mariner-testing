@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AdministracjaPage extends StatelessWidget {
-  static const String id = '/administracja'; // Identyfikator trasy
+  static const String id = '/administracja';
 
   const AdministracjaPage({super.key});
 
