@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+class BtnModel {
+  final String title;
+  final IconData icon;
+
+  BtnModel({required this.title, required this.icon});
+}
+
 class MainPage extends StatelessWidget {
   static const String id = '/main';
 
@@ -8,17 +15,28 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> buttonLabels = [
-      'Administracja',
-      'Organizacja',
-      'Kadry',
-      'Automatyzacja',
-      'Członkowie',
-      'Składki',
-      'Uprawnienia żeglarskie',
-      'Marina',
-      'Statusy',
-      'Ustawienia',
+    final List<BtnModel> buttonLabels = [
+      BtnModel(title: 'Administracja', icon: Icons.person),
+      BtnModel(title: 'Organizacja', icon: Icons.pending_actions),
+      BtnModel(title: 'Kadry', icon: Icons.people),
+      BtnModel(title: 'Automatyzacja', icon: Icons.timelapse_outlined),
+      BtnModel(title: 'Członkowie', icon: Icons.people),
+      BtnModel(title: 'Składki', icon: Icons.monetization_on),
+      BtnModel(title: 'Uprwanienia żeglarskie', icon: Icons.note_add),
+      BtnModel(title: 'Marina', icon: Icons.waves),
+      BtnModel(title: 'Statusy', icon: Icons.star),
+      BtnModel(title: 'Ustawienia', icon: Icons.settings),
+
+      // 'Administracja',
+      // 'Organizacja',
+      // 'Kadry',
+      // 'Automatyzacja',
+      // 'Członkowie',
+      // 'Składki',
+      // 'Uprawnienia żeglarskie',
+      // 'Marina',
+      // 'Statusy',
+      // 'Ustawienia',
     ];
 
     return Scaffold(
@@ -64,7 +82,7 @@ class MainPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(40.0),
                         )),
                     onPressed: () {
-                      switch (buttonLabels[index]) {
+                      switch (buttonLabels[index].title) {
                         case 'Administracja':
                           Navigator.pushNamed(context, '/administracja');
                           break;
@@ -90,7 +108,14 @@ class MainPage extends StatelessWidget {
                           break;
                       }
                     },
-                    child: Text(buttonLabels[index]),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(buttonLabels[index].icon),
+                        Text(buttonLabels[index].title),
+                      ],
+                    ),
                   );
                 },
               ),
