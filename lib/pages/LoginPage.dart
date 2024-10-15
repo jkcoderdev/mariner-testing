@@ -22,14 +22,14 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 20),
-              TextField(
-                decoration: const InputDecoration(
+              const TextField(
+                decoration: InputDecoration(
                   labelText: 'Nazwa użytkownika',
                 ),
               ),
               const SizedBox(height: 10),
-              TextField(
-                decoration: const InputDecoration(
+              const TextField(
+                decoration: InputDecoration(
                   labelText: 'Hasło',
                 ),
                 obscureText: true, 
