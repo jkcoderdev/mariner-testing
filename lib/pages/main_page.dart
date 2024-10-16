@@ -96,8 +96,8 @@ class MainPage extends StatelessWidget {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 16.0,
+                  mainAxisSpacing: 16.0,
                 ),
                 itemCount: buttons.length,
                 itemBuilder: (context, index) {
@@ -112,26 +112,6 @@ class MainPage extends StatelessWidget {
                       }
                     },
                   );
-
-                  // return ElevatedButton(
-                  //   style: ElevatedButton.styleFrom(
-                  //       shape: RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(40.0),
-                  //       )),
-                  //   onPressed: () {
-                  //     if (button.hasRoute) {
-                  //       Navigator.pushNamed(context, button.route!);
-                  //     }
-                  //   },
-                  //   child: Column(
-                  //     crossAxisAlignment: CrossAxisAlignment.center,
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: <Widget>[
-                  //       Icon(button.icon),
-                  //       Text(button.title),
-                  //     ],
-                  //   ),
-                  // );
                 },
               ),
             ),
