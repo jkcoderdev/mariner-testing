@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
       BtnModel(title: 'Automatyzacja', icon: Icons.timelapse_outlined),
       BtnModel(title: 'Członkowie', icon: Icons.people),
       BtnModel(title: 'Składki', icon: Icons.monetization_on),
-      BtnModel(title: 'Uprwanienia żeglarskie', icon: Icons.note_add),
+      BtnModel(title: 'Uprawnienia żeglarskie', icon: Icons.note_add),
       BtnModel(title: 'Marina', icon: Icons.waves),
       BtnModel(title: 'Statusy', icon: Icons.star),
       BtnModel(title: 'Ustawienia', icon: Icons.settings),
