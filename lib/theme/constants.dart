@@ -5,7 +5,7 @@ const Map<String, Color> kThemeColorsLight = {
   'secondary': Color(0xFFD3FFE9),
   'textPrimary': Color(0xFF090909),
   'textSecondary': Color(0xFF4B5043),
-  'background': Color(0xFF282C3A)
+  'background': Color(0xFF9BC4BC)
 };
 
 const Map<String, Color> kThemeColorsDark = {
@@ -13,7 +13,7 @@ const Map<String, Color> kThemeColorsDark = {
   'secondary': Color(0xFF16396D),
   'textPrimary': Color(0xFFDFDFDF),
   'textSecondary': Color(0xFFAAAAAA),
-  'background': Color(0xFF9BC4BC)
+  'background': Color(0xFF282C3A)
 };
 
 class ThemeColors {
