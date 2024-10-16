@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:d360/theme/colors.dart';
+
 import 'package:d360/models/section_button_model.dart';
+
 import 'package:d360/components/section_button.dart';
 
 class BtnModel {
@@ -64,9 +67,17 @@ class MainPage extends StatelessWidget {
       ),
     ];
 
+    final colors = ThemeColors.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('D360'),
+        title: Text(
+          'MARINER',
+          style: TextStyle(
+            color: colors['textPrimary'],
+            fontWeight: FontWeight.w700
+          )
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -78,45 +89,29 @@ class MainPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 16.0, bottom: 0.0, right: 16.0, top: 40.0),
-            child: Text(
-              'D360',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+      body: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 16.0,
+            mainAxisSpacing: 16.0,
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16.0,
-                  mainAxisSpacing: 16.0,
-                ),
-                itemCount: buttons.length,
-                itemBuilder: (context, index) {
-                  final button = buttons[index];
+          itemCount: buttons.length,
+          itemBuilder: (context, index) {
+            final button = buttons[index];
 
-                  return SectionButton(
-                    title: button.title,
-                    icon: button.icon,
-                    onPressed: () {
-                      if (button.hasRoute) {
-                        Navigator.pushNamed(context, button.route!);
-                      }
-                    },
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
+            return SectionButton(
+              title: button.title,
+              icon: button.icon,
+              onPressed: () {
+                if (button.hasRoute) {
+                  Navigator.pushNamed(context, button.route!);
+                }
+              },
+            );
+          },
+        ),
       ),
     );
   }
