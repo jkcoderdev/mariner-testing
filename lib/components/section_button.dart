@@ -12,7 +12,7 @@ class SectionButton extends StatelessWidget {
     final theme = Theme.of(context);
 
     return RawMaterialButton(
-      fillColor: theme.colorScheme.primary,
+      // fillColor: theme.colorScheme.primary,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(40.0))
       ),
