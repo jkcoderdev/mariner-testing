@@ -82,14 +82,11 @@ class SideMenu extends StatelessWidget {
 
                 return ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  // visualDensity: const VisualDensity(vertical: -2.0),
                   iconColor: colors['textPrimary'],
                   leading: Icon(route.icon),
                   title: Text(route.title),
                   onTap: () {
-                    if (route.hasRoute) {
-                      Navigator.pushReplacementNamed(context, route.route!);
-                    }
+                    route.executeWith(context);
                   },
                 );
               }
