@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'dart:convert';
 import 'package:d360/theme/colors.dart';
-
 import 'package:d360/components/form_button.dart';
 import 'package:d360/components/form_input.dart';
 
-class LoginPage extends StatelessWidget {
-  static const String id = '/login'; 
+class LoginPage extends StatefulWidget {
+  static const String id = '/login';
 
   const LoginPage({super.key});
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,27 +46,58 @@ class LoginPage extends StatelessWidget {
                 )
               ),
               const SizedBox(height: 32.0),
-              const FormInput(
-                placeholder: 'Nazwa użytkownika',
+              TextField(
+                controller: usernameController,
+                decoration: const InputDecoration(
+                  
+                  labelText: 'Nazwa użytkownika',
+                ),
               ),
-              const SizedBox(height: 8.0),
-              const FormInput(
-                placeholder: 'Hasło',
-                obscureText: true, 
+              const SizedBox(height: 8),
+              TextField(
+                controller: passwordController,
+                decoration: const InputDecoration(
+                  labelText: 'Hasło',
+                ),
+                obscureText: true,
               ),
-              const SizedBox(height: 16.0),
-              FormButton(
+              const SizedBox(height: 16),
+              ElevatedButton(
                 onPressed: () async {
-                  final prefs = await SharedPreferences.getInstance();
-                  prefs.setBool('loggedIn', true); // Ustawienie zalogowania
-                  Navigator.pushReplacementNamed(context, '/main');
+                  await checkCredentials(context);
                 },
-                text: 'Zaloguj się'
+                child: const Text('Zaloguj się'),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> checkCredentials(BuildContext context) async {
+    String username = usernameController.text;
+    String password = passwordController.text;
+
+    final response = await http.post(
+      Uri.parse('https://acme-dev.d360.pl/api/v1/login'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'username': username,
+        'password': password,
+      }),
+    );
+    print(response.body);
+    if (response.statusCode == 200) {
+      final prefs = await SharedPreferences.getInstance();
+      prefs.setBool('loggedIn', true);
+      Navigator.pushReplacementNamed(context, '/main');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Błędna nazwa użytkownika lub hasło')),
+      );
+    }
   }
 }
