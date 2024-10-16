@@ -6,6 +6,7 @@ import 'pages/administracja/administracja_page.dart';
 import 'pages/organizacja/organizacja_page.dart';
 import 'pages/kadry/kadry_page.dart';
 import 'theme/theme.dart';
+import 'pages/sections_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,25 +18,27 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FutureBuilder<bool>(
-        future: isLoggedIn(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return const Center(child: Text('Błąd podczas sprawdzania logowania.'));
-          } else {
-            
-            return snapshot.data! ? const MainPage() : const LoginPage();
-          }
-        },
-      ),
+      home: const MainPage(),
+      // home: FutureBuilder<bool>(
+      //   future: isLoggedIn(),
+      //   builder: (context, snapshot) {
+      //     if (snapshot.connectionState == ConnectionState.waiting) {
+      //       return const Center(child: CircularProgressIndicator());
+      //     } else if (snapshot.hasError) {
+      //       return const Center(child: Text('Błąd podczas sprawdzania logowania.'));
+      //     } else {
+      //
+      //       return snapshot.data! ? const MainPage() : const LoginPage();
+      //     }
+      //   },
+      // ),
       routes: {
         MainPage.id: (context) => const MainPage(),
         LoginPage.id: (context) => const LoginPage(),
         AdministracjaPage.id: (context) => const AdministracjaPage(),
         OrganizacjaPage.id: (context) => const OrganizacjaPage(),
         KadryPage.id: (context) => const KadryPage(),
+        SectionsPage.id: (context) => const SectionsPage(),
       },
 
       theme: lightTheme,
