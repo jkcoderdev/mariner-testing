@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
+
 import 'package:d360/theme/colors.dart';
+
 import 'package:d360/components/form_button.dart';
 import 'package:d360/components/form_input.dart';
 
@@ -12,7 +15,7 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -46,27 +49,30 @@ class _LoginPageState extends State<LoginPage> {
                 )
               ),
               const SizedBox(height: 32.0),
-              TextField(
+              FormInput(
                 controller: usernameController,
-                decoration: const InputDecoration(
-                  
-                  labelText: 'Nazwa użytkownika',
-                ),
+                placeholder: 'Nazwa użytkownika',
               ),
               const SizedBox(height: 8),
-              TextField(
+              FormInput(
                 controller: passwordController,
-                decoration: const InputDecoration(
-                  labelText: 'Hasło',
-                ),
+                placeholder: 'Hasło',
                 obscureText: true,
               ),
               const SizedBox(height: 16),
-              ElevatedButton(
+              FormButton(
                 onPressed: () async {
                   await checkCredentials(context);
                 },
-                child: const Text('Zaloguj się'),
+                text: 'Zaloguj się',
+              ),
+              const SizedBox(height: 32.0),
+              // Bypass button
+              FormButton(
+                onPressed: () async {
+                  Navigator.pushReplacementNamed(context, '/main');
+                },
+                text: 'Pomiń logowanie',
               ),
             ],
           ),
