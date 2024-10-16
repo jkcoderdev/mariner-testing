@@ -1,11 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'dart:convert';
 import 'package:d360/theme/colors.dart';
-
 import 'package:d360/components/form_button.dart';
 import 'package:d360/components/form_input.dart';
 
@@ -15,12 +12,12 @@ class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginPage>  createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController(text: "admin@acme.example");
+  final TextEditingController passwordController = TextEditingController(text: "test12");
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +46,18 @@ class _LoginPageState extends State<LoginPage> {
                 )
               ),
               const SizedBox(height: 32.0),
-              FormInput(
-                controller: usernameController,
-                placeholder: 'Nazwa użytkownika',
+              TextField(
+                controller: emailController,
+                decoration: const InputDecoration(
+                  labelText: 'E-mail',
+                ),
               ),
               const SizedBox(height: 8),
-              FormInput(
+              TextField(
                 controller: passwordController,
-                placeholder: 'Hasło',
+                decoration: const InputDecoration(
+                  labelText: 'Hasło',
+                ),
                 obscureText: true,
               ),
               const SizedBox(height: 16),
@@ -82,23 +83,25 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> checkCredentials(BuildContext context) async {
-    String username = usernameController.text;
+    String email = emailController.text;
     String password = passwordController.text;
-
     final response = await http.post(
+
       Uri.parse('https://acme-dev.d360.pl/api/v1/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
+        
       },
       body: jsonEncode(<String, String>{
-        'username': username,
+        'email': email,
         'password': password,
       }),
     );
-    print(response.body);
+
     if (response.statusCode == 200) {
       final prefs = await SharedPreferences.getInstance();
       prefs.setBool('loggedIn', true);
+      prefs.setString("access_token",response.body);
       Navigator.pushReplacementNamed(context, '/main');
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
