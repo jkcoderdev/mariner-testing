@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'colors.dart';
 
 final lightColors = ThemeColors.light;
 final darkColors = ThemeColors.dark;
