@@ -66,6 +66,14 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 text: 'Zaloguj się',
               ),
+              const SizedBox(height: 32.0),
+              // Bypass button
+              FormButton(
+                onPressed: () async {
+                  Navigator.pushReplacementNamed(context, '/main');
+                },
+                text: 'Pomiń logowanie',
+              ),
             ],
           ),
         ),
