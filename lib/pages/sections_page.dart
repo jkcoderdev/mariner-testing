@@ -1,3 +1,4 @@
+import 'package:d360/components/section_button.dart';
 import 'package:flutter/material.dart';
 import 'package:d360/models/section_button_model.dart';
 import 'package:d360/theme/colors.dart';
@@ -16,25 +17,7 @@ class SectionsPage extends StatelessWidget {
 
     final colors = ThemeColors.of(context);
 
-    const List<SectionButtonModel> buttons = [
-      SectionButtonModel(
-          title: 'Administracja',
-          icon: Icons.person,
-          route: '/administracja'
-      ),
-      SectionButtonModel(
-          title: 'Organizacja',
-          icon: Icons.pending_actions,
-          route: '/organizacja'
-      ),
-      SectionButtonModel(
-          title: 'Kadry',
-          icon: Icons.people,
-          route: '/kadry'
-      ),
-    ];
-
-    final List? testbtn = kSubsections[route]?.toList();
+    final List? buttons = kSubsections[route]?.toList() ?? const [SectionButton(icon: Icons.close, title: 'Brak podsekcji')] ;
 
     return Scaffold(
         appBar: AppBar(
@@ -47,15 +30,14 @@ class SectionsPage extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
           child: ListView.builder(
-              itemCount: testbtn?.length,
+              itemCount: buttons?.length,
               itemBuilder: (context, index){
-                final button = testbtn?[index];
+                final button = buttons?[index];
 
                 return Column(
                   children: [
                     TextButton(onPressed: (){
-                      var test =  kSubsections['/administracja']?.toList(growable: true);
-                      print( test?[1] );
+
                     },
 
                         style: ButtonStyle(
