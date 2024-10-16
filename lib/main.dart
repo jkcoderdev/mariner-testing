@@ -5,6 +5,7 @@ import 'pages/login_page.dart';
 import 'pages/administracja/administracja_page.dart';
 import 'pages/organizacja/organizacja_page.dart';
 import 'pages/kadry/kadry_page.dart';
+import 'theme/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -36,6 +37,9 @@ class MainApp extends StatelessWidget {
         OrganizacjaPage.id: (context) => const OrganizacjaPage(),
         KadryPage.id: (context) => const KadryPage(),
       },
+
+      theme: lightTheme,
+      darkTheme: darkTheme,
     );
   }
 
