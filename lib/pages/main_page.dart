@@ -81,7 +81,10 @@ class MainPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.logout),
+            icon: Icon(
+              Icons.logout,
+              color: colors['textPrimary'],
+            ),
             onPressed: () async {
               final prefs = await SharedPreferences.getInstance();
               prefs.setBool('loggedIn', false);
