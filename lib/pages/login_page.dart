@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:d360/components/form_button.dart';
+import 'package:d360/components/form_input.dart';
+
 class LoginPage extends StatelessWidget {
   static const String id = '/login'; 
 
@@ -22,26 +26,22 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 20),
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Nazwa użytkownika',
-                ),
+              const FormInput(
+                placeholder: 'Nazwa użytkownika',
               ),
               const SizedBox(height: 10),
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Hasło',
-                ),
+              const FormInput(
+                placeholder: 'Hasło',
                 obscureText: true, 
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
+              FormButton(
                 onPressed: () async {
                   final prefs = await SharedPreferences.getInstance();
                   prefs.setBool('loggedIn', true); // Ustawienie zalogowania
                   Navigator.pushReplacementNamed(context, '/main');
                 },
-                child: const Text('Zaloguj się'),
+                text: 'Zaloguj się'
               ),
             ],
           ),
