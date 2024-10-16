@@ -18,20 +18,20 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MainPage(),
-      // home: FutureBuilder<bool>(
-      //   future: isLoggedIn(),
-      //   builder: (context, snapshot) {
-      //     if (snapshot.connectionState == ConnectionState.waiting) {
-      //       return const Center(child: CircularProgressIndicator());
-      //     } else if (snapshot.hasError) {
-      //       return const Center(child: Text('Błąd podczas sprawdzania logowania.'));
-      //     } else {
-      //
-      //       return snapshot.data! ? const MainPage() : const LoginPage();
-      //     }
-      //   },
-      // ),
+      // home: const MainPage(),
+      home: FutureBuilder<bool>(
+        future: isLoggedIn(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return const Center(child: Text('Błąd podczas sprawdzania logowania.'));
+          } else {
+
+            return snapshot.data! ? const MainPage() : const LoginPage();
+          }
+        },
+      ),
       routes: {
         MainPage.id: (context) => const MainPage(),
         LoginPage.id: (context) => const LoginPage(),
