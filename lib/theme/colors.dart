@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 const Map<String, Color> kThemeColorsLight = {
-  'primary': Color(0xFF779BB5),
+  'primary': Color(0xFF5788A2),
   'secondary': Color(0xFFACC3D3),
+  'special': Color(0xFFFCE5b6),
   'textPrimary': Color(0xFF090909),
   'textSecondary': Color(0xFF4B5043),
-  'background': Color(0xFFBDDFE6)
+  'background': Color(0xFFA1BEC9)
 };
 
 const Map<String, Color> kThemeColorsDark = {
