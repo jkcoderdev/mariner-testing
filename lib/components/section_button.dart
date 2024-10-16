@@ -19,12 +19,26 @@ class SectionButton extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(40.0))
       ),
       onPressed: onPressed,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Icon(icon),
-          Text(title)
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              icon,
+              color: colors['textPrimary'],
+            ),
+            const SizedBox(height: 4.0),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16.0,
+                color: colors['textPrimary']
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
