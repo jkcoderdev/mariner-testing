@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:d360/theme/colors.dart';
 
 class FormInput extends StatelessWidget {
-  const FormInput({super.key, this.placeholder, this.obscureText, this.onChanged});
+  const FormInput({super.key, this.placeholder, this.obscureText, this.controller, this.onChanged});
 
   final String? placeholder;
   final bool? obscureText;
+  final TextEditingController? controller;
   final Function(String)? onChanged;
 
   @override
@@ -41,6 +42,7 @@ class FormInput extends StatelessWidget {
         fontSize: 16.0
       ),
       obscureText: obscureText ?? false,
+      controller: controller,
       onChanged: onChanged,
     );
   }

@@ -38,9 +38,9 @@ class MainPage extends StatelessWidget {
         route: '/kadry'
       ),
       SectionButtonModel(
-        title: 'Automatyzacja',
-        icon: Icons.timelapse_outlined,
-        route: '/sekcje'
+        title: 'Automatyzacja', 
+        icon: Icons.build,
+        route: '/sekcje',
       ),
       SectionButtonModel(
         title: 'Członkowie',
