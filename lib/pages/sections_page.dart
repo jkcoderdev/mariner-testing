@@ -8,7 +8,9 @@ import 'dart:convert';
 class SectionsPage extends StatelessWidget {
   static const String id = '/sekcje';
 
-  const SectionsPage({super.key});
+  final String route;
+
+  const SectionsPage({required this.route,super.key});
 
 
   @override
@@ -34,7 +36,7 @@ class SectionsPage extends StatelessWidget {
       ),
     ];
 
-    final List? testbtn = kSubsections['/administracja']?.toList();
+    final List? testbtn = kSubsections[route]?.toList();
 
     return Scaffold(
         appBar: AppBar(

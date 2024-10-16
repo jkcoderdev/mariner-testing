@@ -38,7 +38,7 @@ class MainApp extends StatelessWidget {
         AdministracjaPage.id: (context) => const AdministracjaPage(),
         OrganizacjaPage.id: (context) => const OrganizacjaPage(),
         KadryPage.id: (context) => const KadryPage(),
-        SectionsPage.id: (context) => const SectionsPage(),
+        SectionsPage.id: (context) => SectionsPage(route: ModalRoute.of(context)!.settings.arguments as String),
       },
 
       theme: lightTheme,
