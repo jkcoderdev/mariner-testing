@@ -112,7 +112,7 @@ class MainPage extends StatelessWidget {
               icon: button.icon,
               onPressed: () {
                 if (button.hasRoute) {
-                  Navigator.pushNamed(context, button.route!);
+                  Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
                 }
               },
             );
