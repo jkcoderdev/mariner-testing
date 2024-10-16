@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'pages/MainPage.dart';
-import 'pages/LoginPage.dart';
-import 'pages/administracja/AdministracjaPage.dart';
-import 'pages/organizacja/OrganizacjaPage.dart';
-import 'pages/kadry/KadryPage.dart';
+import 'pages/main_page.dart';
+import 'pages/login_page.dart';
+import 'pages/administracja/administracja_page.dart';
+import 'pages/organizacja/organizacja_page.dart';
+import 'pages/kadry/kadry_page.dart';
 
 void main() {
   runApp(const MainApp());
