@@ -112,26 +112,6 @@ class MainPage extends StatelessWidget {
                       }
                     },
                   );
-
-                  // return ElevatedButton(
-                  //   style: ElevatedButton.styleFrom(
-                  //       shape: RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(40.0),
-                  //       )),
-                  //   onPressed: () {
-                  //     if (button.hasRoute) {
-                  //       Navigator.pushNamed(context, button.route!);
-                  //     }
-                  //   },
-                  //   child: Column(
-                  //     crossAxisAlignment: CrossAxisAlignment.center,
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: <Widget>[
-                  //       Icon(button.icon),
-                  //       Text(button.title),
-                  //     ],
-                  //   ),
-                  // );
                 },
               ),
             ),
