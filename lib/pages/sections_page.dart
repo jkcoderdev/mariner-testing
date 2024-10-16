@@ -1,6 +1,9 @@
+import 'package:d360/components/section_button.dart';
 import 'package:flutter/material.dart';
 import 'package:d360/models/section_button_model.dart';
 import 'package:d360/theme/colors.dart';
+import 'package:d360/components/section_list.dart';
+import 'dart:convert';
 
 class SectionsPage extends StatelessWidget {
   static const String id = '/sekcje';
@@ -31,6 +34,8 @@ class SectionsPage extends StatelessWidget {
       ),
     ];
 
+    final List? testbtn = kSubsections['/administracja']?.toList();
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -42,13 +47,16 @@ class SectionsPage extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
           child: ListView.builder(
-              itemCount: buttons.length,
+              itemCount: testbtn?.length,
               itemBuilder: (context, index){
-                final button = buttons[index];
+                final button = testbtn?[index];
 
                 return Column(
                   children: [
-                    TextButton(onPressed: (){},
+                    TextButton(onPressed: (){
+                      var test =  kSubsections['/administracja']?.toList(growable: true);
+                      print( test?[1] );
+                    },
 
                         style: ButtonStyle(
                             backgroundColor: WidgetStatePropertyAll( colors['background'] ),
