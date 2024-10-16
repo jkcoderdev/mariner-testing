@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:d360/theme/colors.dart';
+
 import 'package:d360/models/section_button_model.dart';
+
 import 'package:d360/components/section_button.dart';
+import 'package:d360/components/side_menu.dart';
 import 'sections_page.dart';
 
 class BtnModel {
@@ -108,7 +112,7 @@ class MainPage extends StatelessWidget {
               icon: button.icon,
               onPressed: () {
                 if (button.hasRoute) {
-                  Navigator.pushNamed(context, SectionsPage.id, arguments: button.route );
+                  Navigator.pushNamed(context, button.route!);
                 }
               },
             );
