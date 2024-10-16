@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
 const Map<String, Color> kThemeColorsLight = {
-  'primary': Color(0xFF48CAE4),
-  'secondary': Color(0xFF0096C7),
+  'primary': Color(0xFF779BB5),
+  'secondary': Color(0xFFACC3D3),
   'textPrimary': Color(0xFF090909),
   'textSecondary': Color(0xFF4B5043),
-  'background': Color(0xFFADE8F4)
+  'background': Color(0xFFBDDFE6)
 };
 
 const Map<String, Color> kThemeColorsDark = {
-  'primary': Color(0xFF222047),
-  'secondary': Color(0xFF16396D),
+  'primary': Color(0xff45708a),
+  'secondary': Color(0xFF516170),
+  'special': Color(0xFFEAD8B1),
   'textPrimary': Color(0xFFDFDFDF),
   'textSecondary': Color(0xFFAAAAAA),
-  'background': Color(0xFF282C3A)
+  'background': Color(0xFF001F3F)
 };
 
 class ThemeColors {
