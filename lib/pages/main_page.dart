@@ -27,7 +27,8 @@ class MainPage extends StatelessWidget {
       SectionButtonModel(
         title: 'Administracja',
         icon: Icons.person,
-        route: '/administracja'
+        route: '/administracja',
+        hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Organizacja',
@@ -112,9 +113,12 @@ class MainPage extends StatelessWidget {
               title: button.title,
               icon: button.icon,
               onPressed: () {
-                if (button.hasRoute) {
-                  Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
+                if(button.hasSubSec && button.hasRoute){
+                    Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
+                } else if(!button.hasSubSec && button.hasRoute){
+                  Navigator.pushNamed(context, button.route.toString() );
                 }
+
               },
             );
           },
