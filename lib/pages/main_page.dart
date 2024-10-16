@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:d360/models/section_button_model.dart';
+import 'package:d360/components/section_button.dart';
+
 class BtnModel {
   final String title;
   final IconData icon;
@@ -15,28 +18,50 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<BtnModel> buttonLabels = [
-      BtnModel(title: 'Administracja', icon: Icons.person),
-      BtnModel(title: 'Organizacja', icon: Icons.pending_actions),
-      BtnModel(title: 'Kadry', icon: Icons.people),
-      BtnModel(title: 'Automatyzacja', icon: Icons.timelapse_outlined),
-      BtnModel(title: 'Członkowie', icon: Icons.people),
-      BtnModel(title: 'Składki', icon: Icons.monetization_on),
-      BtnModel(title: 'Uprawnienia żeglarskie', icon: Icons.note_add),
-      BtnModel(title: 'Marina', icon: Icons.waves),
-      BtnModel(title: 'Statusy', icon: Icons.star),
-      BtnModel(title: 'Ustawienia', icon: Icons.settings),
-
-      // 'Administracja',
-      // 'Organizacja',
-      // 'Kadry',
-      // 'Automatyzacja',
-      // 'Członkowie',
-      // 'Składki',
-      // 'Uprawnienia żeglarskie',
-      // 'Marina',
-      // 'Statusy',
-      // 'Ustawienia',
+    const List<SectionButtonModel> buttons = [
+      SectionButtonModel(
+        title: 'Administracja',
+        icon: Icons.person,
+        route: '/administracja'
+      ),
+      SectionButtonModel(
+        title: 'Organizacja',
+        icon: Icons.pending_actions,
+        route: '/organizacja'
+      ),
+      SectionButtonModel(
+        title: 'Kadry',
+        icon: Icons.people,
+        route: '/kadry'
+      ),
+      SectionButtonModel(
+        title: 'Automatyzacja',
+        icon: Icons.timelapse_outlined
+      ),
+      SectionButtonModel(
+        title: 'Członkowie',
+        icon: Icons.people
+      ),
+      SectionButtonModel(
+        title: 'Składki',
+        icon: Icons.monetization_on
+      ),
+      SectionButtonModel(
+        title: 'Uprawnienia żeglarskie',
+        icon: Icons.note_add
+      ),
+      SectionButtonModel(
+        title: 'Marina',
+        icon: Icons.waves
+      ),
+      SectionButtonModel(
+        title: 'Statusy',
+        icon: Icons.star
+      ),
+      SectionButtonModel(
+        title: 'Ustawienia',
+        icon: Icons.settings
+      ),
     ];
 
     return Scaffold(
@@ -74,49 +99,39 @@ class MainPage extends StatelessWidget {
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
                 ),
-                itemCount: buttonLabels.length,
+                itemCount: buttons.length,
                 itemBuilder: (context, index) {
-                  return ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40.0),
-                        )),
+                  final button = buttons[index];
+
+                  return SectionButton(
+                    title: button.title,
+                    icon: button.icon,
                     onPressed: () {
-                      switch (buttonLabels[index].title) {
-                        case 'Administracja':
-                          Navigator.pushNamed(context, '/administracja');
-                          break;
-                        case 'Organizacja':
-                          Navigator.pushNamed(context, '/organizacja');
-                          break;
-                        case 'Kadry':
-                          Navigator.pushNamed(context, '/kadry');
-                          break;
-                        case 'Automatyzacja':
-                          break;
-                        case 'Członkowie':
-                          break;
-                        case 'Składki':
-                          break;
-                        case 'Uprawnienia żeglarskie':
-                          break;
-                        case 'Marina':
-                          break;
-                        case 'Statusy':
-                          break;
-                        case 'Ustawienia':
-                          break;
+                      if (button.hasRoute) {
+                        Navigator.pushNamed(context, button.route!);
                       }
                     },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(buttonLabels[index].icon),
-                        Text(buttonLabels[index].title),
-                      ],
-                    ),
                   );
+
+                  // return ElevatedButton(
+                  //   style: ElevatedButton.styleFrom(
+                  //       shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(40.0),
+                  //       )),
+                  //   onPressed: () {
+                  //     if (button.hasRoute) {
+                  //       Navigator.pushNamed(context, button.route!);
+                  //     }
+                  //   },
+                  //   child: Column(
+                  //     crossAxisAlignment: CrossAxisAlignment.center,
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: <Widget>[
+                  //       Icon(button.icon),
+                  //       Text(button.title),
+                  //     ],
+                  //   ),
+                  // );
                 },
               ),
             ),
