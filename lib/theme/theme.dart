@@ -9,8 +9,7 @@ final ThemeData lightTheme = ThemeData(
   appBarTheme: AppBarTheme(
     backgroundColor: lightColors['primary']
   ),
-  scaffoldBackgroundColor: lightColors['background']
-
+  scaffoldBackgroundColor: lightColors['background'],
 );
 
 final ThemeData darkTheme = ThemeData(

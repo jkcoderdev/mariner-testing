@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:d360/theme/colors.dart';
+
 class SectionButton extends StatelessWidget {
   const SectionButton({super.key, required this.icon, required this.title, this.onPressed});
 
@@ -9,10 +11,10 @@ class SectionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final colors = ThemeColors.of(context);
 
     return RawMaterialButton(
-      // fillColor: theme.colorScheme.primary,
+      fillColor: colors['secondary'],
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(40.0))
       ),
