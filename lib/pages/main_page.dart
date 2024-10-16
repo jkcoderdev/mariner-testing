@@ -7,7 +7,7 @@ import 'package:d360/models/section_button_model.dart';
 
 import 'package:d360/components/section_button.dart';
 import 'package:d360/components/side_menu.dart';
-import 'sections_page.dart';
+import 'package:d360/pages/sections_page.dart';
 
 class BtnModel {
   final String title;
@@ -95,6 +95,7 @@ class MainPage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: const SideMenu(),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
