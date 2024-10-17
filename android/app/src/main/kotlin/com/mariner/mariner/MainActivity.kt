@@ -1,4 +1,4 @@
-package com.mariner
+package com.mariner.mariner
 
 import io.flutter.embedding.android.FlutterActivity
 

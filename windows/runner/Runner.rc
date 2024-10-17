@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "d360" "\0"
+            VALUE "CompanyName", "com.mariner" "\0"
+            VALUE "FileDescription", "mariner" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "d360" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "d360.exe" "\0"
-            VALUE "ProductName", "d360" "\0"
+            VALUE "InternalName", "mariner" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.mariner. All rights reserved." "\0"
+            VALUE "OriginalFilename", "mariner.exe" "\0"
+            VALUE "ProductName", "mariner" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
