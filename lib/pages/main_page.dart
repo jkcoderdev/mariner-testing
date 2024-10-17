@@ -43,7 +43,7 @@ class MainPage extends StatelessWidget {
       SectionButtonModel(
         title: 'Automatyzacja', 
         icon: Icons.build,
-        route: '/sekcje',
+        // route: '/sekcje',
       ),
       SectionButtonModel(
         title: 'Członkowie',
