@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:d360/theme/colors.dart';
+import 'package:mariner/theme/colors.dart';
 
 class FormButton extends StatelessWidget {
   const FormButton({super.key, required this.text, this.onPressed});

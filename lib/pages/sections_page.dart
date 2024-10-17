@@ -1,8 +1,8 @@
-import 'package:d360/components/section_button.dart';
+import 'package:mariner/components/section_button.dart';
 import 'package:flutter/material.dart';
-import 'package:d360/models/section_button_model.dart';
-import 'package:d360/theme/colors.dart';
-import 'package:d360/components/section_list.dart';
+import 'package:mariner/models/section_button_model.dart';
+import 'package:mariner/theme/colors.dart';
+import 'package:mariner/components/section_list.dart';
 
 class SectionsPage extends StatelessWidget {
   static const String id = '/sekcje';

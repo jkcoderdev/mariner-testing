@@ -29,6 +29,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Mariner',
       home: FutureBuilder<bool>(
         future: isLoggedIn(),
         builder: (context, snapshot) {

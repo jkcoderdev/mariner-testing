@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:d360/theme/colors.dart';
+import 'package:mariner/theme/colors.dart';
 
 class FormInput extends StatelessWidget {
   const FormInput({super.key, this.placeholder, this.obscureText, this.controller, this.onChanged});

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:d360/theme/colors.dart';
+import 'package:mariner/theme/colors.dart';
 
-import 'package:d360/models/section_button_model.dart';
+import 'package:mariner/models/section_button_model.dart';
 
-import 'package:d360/components/section_button.dart';
-import 'package:d360/components/side_menu.dart';
-import 'package:d360/pages/sections_page.dart';
+import 'package:mariner/components/section_button.dart';
+import 'package:mariner/components/side_menu.dart';
+import 'package:mariner/pages/sections_page.dart';
 
 class BtnModel {
   final String title;

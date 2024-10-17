@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:d360/theme/colors.dart';
+import 'package:mariner/theme/colors.dart';
 
 class SectionButton extends StatelessWidget {
   const SectionButton({super.key, required this.icon, required this.title, this.onPressed});

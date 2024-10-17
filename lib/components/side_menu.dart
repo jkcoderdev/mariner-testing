@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:d360/theme/colors.dart';
+import 'package:mariner/theme/colors.dart';
 
-import 'package:d360/models/side_menu_tile_model.dart';
+import 'package:mariner/models/side_menu_tile_model.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({super.key});

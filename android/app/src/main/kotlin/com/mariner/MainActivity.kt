@@ -1,4 +1,4 @@
-package com.example.d360
+package com.mariner
 
 import io.flutter.embedding.android.FlutterActivity
 

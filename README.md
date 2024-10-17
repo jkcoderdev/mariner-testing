@@ -1,3 +1,3 @@
-# d360
+# Mariner
 
-Wersja mobila aplikacji d360
+Oprogramowanie dla żeglarzy

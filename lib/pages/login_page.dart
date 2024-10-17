@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import 'package:d360/theme/colors.dart';
-import 'package:d360/components/form_button.dart';
-import 'package:d360/components/form_input.dart';
+import 'package:mariner/theme/colors.dart';
+import 'package:mariner/components/form_button.dart';
+import 'package:mariner/components/form_input.dart';
 
 class LoginPage extends StatefulWidget {
   static const String id = '/login';
