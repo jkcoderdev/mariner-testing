@@ -23,7 +23,7 @@ class SectionsPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-          'MARINER',
+          route.substring(1).toUpperCase(),
           style: TextStyle(
           color: colors['textPrimary'],
           fontWeight: FontWeight.w700
