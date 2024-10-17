@@ -24,15 +24,23 @@ final ThemeData darkTheme = ThemeData(
 
 class ThemeDataProvider extends ChangeNotifier{
   bool _isDarkMode = false;
+  bool _reverse = false;
 
   ThemeData getThemeData({bool reverse = false}) {
 
-    if(!reverse) { return _isDarkMode ? darkTheme : lightTheme; }
-    else { return !_isDarkMode ? darkTheme : lightTheme; }
+    if(!reverse) {
+      _reverse = false;
+      return _isDarkMode ? darkTheme : lightTheme;
+    } else {
+      _reverse = true;
+      return !_isDarkMode ? darkTheme : lightTheme;
+    }
   }
   
   IconData getThemeIcon(){
-    return _isDarkMode ? Icons.light_mode : Icons.dark_mode;
+    if(!_reverse) { return _isDarkMode ? Icons.light_mode : Icons.dark_mode; }
+    else { return !_isDarkMode ? Icons.light_mode : Icons.dark_mode; }
+
   }
 
   void switchTheme(){
