@@ -37,10 +37,15 @@ class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
+
+
+
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Mariner',
       home: FutureBuilder<bool>(
+
         future: isLoggedIn(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -67,6 +72,8 @@ class MainApp extends StatelessWidget {
       },
 
       theme: Provider.of<ThemeDataProvider>(context).getThemeData(),
+      darkTheme: Provider.of<ThemeDataProvider>(context).getThemeData(reverse: true),
+
     );
   }
 

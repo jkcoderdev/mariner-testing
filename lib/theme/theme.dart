@@ -22,15 +22,13 @@ final ThemeData darkTheme = ThemeData(
 );
 
 
-
-
-
-
 class ThemeDataProvider extends ChangeNotifier{
   bool _isDarkMode = false;
 
-  ThemeData getThemeData() {
-    return _isDarkMode ? darkTheme : lightTheme;
+  ThemeData getThemeData({bool reverse = false}) {
+
+    if(!reverse) { return _isDarkMode ? darkTheme : lightTheme; }
+    else { return !_isDarkMode ? darkTheme : lightTheme; }
   }
   
   IconData getThemeIcon(){
@@ -41,4 +39,9 @@ class ThemeDataProvider extends ChangeNotifier{
     _isDarkMode = !_isDarkMode;
     notifyListeners();
   }
+
+  void initTheme(BuildContext context){
+    _isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
+  }
+
 }
