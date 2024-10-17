@@ -9,6 +9,7 @@ import 'theme/theme.dart';
 import 'package:http/http.dart' as http;
 import 'pages/sections_page.dart';
 import 'dart:io';
+import 'package:provider/provider.dart';
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -20,7 +21,14 @@ class MyHttpOverrides extends HttpOverrides {
 void main() {
 
   HttpOverrides.global = MyHttpOverrides();
-  runApp(const MainApp());
+  runApp(MultiProvider( // create the provider
+    providers: [
+      ChangeNotifierProvider(
+        create: (_) => ThemeDataProvider(),
+      )
+    ],
+    child: const MainApp(),
+  ),);
 }
 
 class MainApp extends StatelessWidget {
@@ -53,8 +61,7 @@ class MainApp extends StatelessWidget {
 
       },
 
-      theme: lightTheme,
-      darkTheme: darkTheme,
+      theme: Provider.of<ThemeDataProvider>(context).getThemeData(),
     );
   }
 

@@ -4,6 +4,10 @@ import 'package:mariner/theme/colors.dart';
 
 import 'package:mariner/models/side_menu_tile_model.dart';
 
+import 'package:mariner/theme/theme.dart';
+
+import 'package:provider/provider.dart';
+
 class SideMenu extends StatelessWidget {
   const SideMenu({super.key});
 
@@ -22,6 +26,10 @@ class SideMenu extends StatelessWidget {
           title: 'O aplikacji',
           icon: Icons.info
       ),
+      SideMenuTileModel(
+          title: 'Zmień motyw',
+          icon: Icons.sunny,
+      )
     ];
 
     final colors = ThemeColors.of(context);
@@ -86,7 +94,8 @@ class SideMenu extends StatelessWidget {
                   leading: Icon(route.icon),
                   title: Text(route.title),
                   onTap: () {
-                    route.executeWith(context);
+                    // route.executeWith(context);
+                    Provider.of<ThemeDataProvider>(context, listen: false).switchTheme();
                   },
                 );
               }
