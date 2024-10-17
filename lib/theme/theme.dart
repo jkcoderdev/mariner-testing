@@ -32,10 +32,13 @@ class ThemeDataProvider extends ChangeNotifier{
   ThemeData getThemeData() {
     return _isDarkMode ? darkTheme : lightTheme;
   }
+  
+  IconData getThemeIcon(){
+    return _isDarkMode ? Icons.light_mode : Icons.dark_mode;
+  }
 
   void switchTheme(){
     _isDarkMode = !_isDarkMode;
     notifyListeners();
-    print(_isDarkMode);
   }
 }

@@ -26,10 +26,6 @@ class SideMenu extends StatelessWidget {
           title: 'O aplikacji',
           icon: Icons.info
       ),
-      SideMenuTileModel(
-          title: 'Zmień motyw',
-          icon: Icons.sunny,
-      )
     ];
 
     final colors = ThemeColors.of(context);
@@ -94,12 +90,19 @@ class SideMenu extends StatelessWidget {
                   leading: Icon(route.icon),
                   title: Text(route.title),
                   onTap: () {
-                    // route.executeWith(context);
-                    Provider.of<ThemeDataProvider>(context, listen: false).switchTheme();
+                    route.executeWith(context);
                   },
                 );
               }
             ),
+          ),
+          Row(
+            children: [
+              const Expanded(child: SizedBox()),
+              IconButton(onPressed: (){
+                Provider.of<ThemeDataProvider>(context, listen: false).switchTheme();
+              }, icon: Icon(Provider.of<ThemeDataProvider>(context).getThemeIcon() , size: 45.0,)),
+            ],
           )
         ],
       ),
