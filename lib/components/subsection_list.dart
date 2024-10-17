@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'section_button.dart';
+import 'subsection_button.dart';
+import 'package:mariner/pages/administracja/users_page.dart';
 
 const Map < String, List > kSubsections = {
   '/administracja': <Widget>[
-    SectionButton(icon: Icons.groups, title: 'Użytkownicy'),
-    SectionButton(icon: Icons.mail, title: 'Zaproszenia'),
-    SectionButton(icon: Icons.add_card_rounded, title: 'Uprawnienia'),
-    SectionButton(icon: Icons.perm_contact_calendar_rounded, title: 'Role'),
+    SubsectionButton(icon: Icons.groups, title: 'Użytkownicy', route: UsersPage.id,),
+    SubsectionButton(icon: Icons.mail, title: 'Zaproszenia'),
+    SubsectionButton(icon: Icons.add_card_rounded, title: 'Uprawnienia'),
+    SubsectionButton(icon: Icons.perm_contact_calendar_rounded, title: 'Role'),
   ],
   '/skladki': <Widget>[
-    SectionButton(icon: Icons.access_time_filled_sharp, title: 'Zyćko'),
-    SectionButton(icon: Icons.account_balance_wallet, title: 'Unżyćko')
+    SubsectionButton(icon: Icons.access_time_filled_sharp, title: 'Zyćko'),
+    SubsectionButton(icon: Icons.account_balance_wallet, title: 'Unżyćko')
   ],
 };

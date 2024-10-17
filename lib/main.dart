@@ -10,6 +10,8 @@ import 'package:http/http.dart' as http;
 import 'pages/subsections_page.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
+import 'pages/administracja/users_page.dart';
+
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -58,6 +60,9 @@ class MainApp extends StatelessWidget {
         OrganizacjaPage.id: (context) => const OrganizacjaPage(),
         KadryPage.id: (context) => const KadryPage(),
         SectionsPage.id: (context) => SectionsPage(route: ModalRoute.of(context)!.settings.arguments as String),
+
+        // Admin module routes
+        UsersPage.id: (context) => const UsersPage(),
 
       },
 
