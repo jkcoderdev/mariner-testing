@@ -37,7 +37,7 @@ class SectionsPage extends StatelessWidget {
 
                 return Column(
                   children: [
-                    SubsectionButton(title: button.title, icon: button.icon),
+                    SubsectionButton(title: button.title, icon: button.icon, route: button.route,),
                     Divider(color: colors['special'],)
                   ],
                 );

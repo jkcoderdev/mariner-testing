@@ -14,7 +14,8 @@ class SubsectionButton extends StatelessWidget {
 
     return RawMaterialButton(
       onPressed: (){
-      if(route != null ) Navigator.pushNamed(context, route.toString() );
+        if(route != null ) Navigator.pushNamed(context, route.toString() );
+        print(route);
       },
       
       fillColor: colors['background'],
