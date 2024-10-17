@@ -102,6 +102,7 @@ class SideMenu extends StatelessWidget {
               IconButton(onPressed: (){
                 Provider.of<ThemeDataProvider>(context, listen: false).switchTheme();
               }, icon: Icon(Provider.of<ThemeDataProvider>(context).getThemeIcon() , size: 45.0,)),
+              SizedBox(width: 10.0,)
             ],
           )
         ],
