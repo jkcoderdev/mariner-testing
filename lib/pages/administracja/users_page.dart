@@ -10,7 +10,7 @@ class UsersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Użytkownicy') ,),
-      body: Column(
+      body: const Column(
         children: [Text('Stronka WOOOOOOOOOOOOOOOOOOO')],
       ),
     );

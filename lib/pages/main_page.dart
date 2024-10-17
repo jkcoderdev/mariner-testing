@@ -37,7 +37,9 @@ class MainPage extends StatelessWidget {
       ),
       SectionButtonModel(
         title: 'Wydarzenia',
-        icon: Icons.people
+        icon: Icons.people,
+        route: '/wydarzenia',
+        hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Składki',

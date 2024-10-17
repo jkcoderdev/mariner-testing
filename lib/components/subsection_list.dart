@@ -9,8 +9,9 @@ const Map < String, List > kSubsections = {
     SubsectionButton(icon: Icons.add_card_rounded, title: 'Uprawnienia'),
     SubsectionButton(icon: Icons.perm_contact_calendar_rounded, title: 'Role'),
   ],
-  '/skladki': <Widget>[
-    SubsectionButton(icon: Icons.access_time_filled_sharp, title: 'Zyćko'),
-    SubsectionButton(icon: Icons.account_balance_wallet, title: 'Unżyćko')
+  '/wydarzenia': <Widget>[
+    SubsectionButton(icon: Icons.calendar_month, title: 'Kalendarz'),
+    SubsectionButton(icon: Icons.mail, title: 'Wiadomości'),
+    SubsectionButton(icon: Icons.info, title: 'Informacje')
   ],
 };
