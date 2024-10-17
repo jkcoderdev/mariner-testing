@@ -36,17 +36,7 @@ class MainPage extends StatelessWidget {
         route: '/organizacja'
       ),
       SectionButtonModel(
-        title: 'Kadry',
-        icon: Icons.people,
-        route: '/kadry'
-      ),
-      SectionButtonModel(
-        title: 'Automatyzacja', 
-        icon: Icons.build,
-        // route: '/sekcje',
-      ),
-      SectionButtonModel(
-        title: 'Członkowie',
+        title: 'Wydarzenia',
         icon: Icons.people
       ),
       SectionButtonModel(
@@ -66,7 +56,7 @@ class MainPage extends StatelessWidget {
         icon: Icons.star
       ),
       SectionButtonModel(
-        title: 'Ustawienia',
+        title: 'Ustawienia klubu',
         icon: Icons.settings
       ),
     ];
