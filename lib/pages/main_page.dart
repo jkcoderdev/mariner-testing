@@ -7,7 +7,7 @@ import 'package:mariner/models/section_button_model.dart';
 
 import 'package:mariner/components/section_button.dart';
 import 'package:mariner/components/side_menu.dart';
-import 'package:mariner/pages/sections_page.dart';
+import 'package:mariner/pages/subsections_page.dart';
 
 class BtnModel {
   final String title;

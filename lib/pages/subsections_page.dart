@@ -1,5 +1,6 @@
 import 'package:mariner/components/section_button.dart';
 import 'package:flutter/material.dart';
+import 'package:mariner/components/subsection_button.dart';
 import 'package:mariner/models/section_button_model.dart';
 import 'package:mariner/theme/colors.dart';
 import 'package:mariner/components/subsection_list.dart';
@@ -36,24 +37,7 @@ class SectionsPage extends StatelessWidget {
 
                 return Column(
                   children: [
-                    TextButton(onPressed: (){
-
-                    },
-
-                        style: ButtonStyle(
-                            backgroundColor: WidgetStatePropertyAll( colors['background'] ),
-                        ),
-
-                        child: Row(
-                          children: [
-                            Icon(button.icon, color: colors['textPrimary'],),
-                            const SizedBox(width: 20.0,) ,
-                            Text(button.title,
-                              style: TextStyle(color: colors['textPrimary']),
-                            )
-                          ],
-                        )
-                    ),
+                    SubsectionButton(title: button.title, icon: button.icon),
                     Divider(color: colors['special'],)
                   ],
                 );

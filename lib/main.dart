@@ -7,7 +7,7 @@ import 'pages/organizacja/organizacja_page.dart';
 import 'pages/kadry/kadry_page.dart';
 import 'theme/theme.dart';
 import 'package:http/http.dart' as http;
-import 'pages/sections_page.dart';
+import 'pages/subsections_page.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
 class MyHttpOverrides extends HttpOverrides {
