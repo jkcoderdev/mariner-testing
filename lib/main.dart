@@ -22,6 +22,7 @@ import 'pages/members/users_page.dart' as Members;
 import 'pages/members/invites_page.dart' as Members;
 import 'pages/members/roles_page.dart' as Members;
 import 'pages/members/statuses_page.dart' as Members;
+import 'pages/members/wants_to_join_page.dart' as Members;
 
 // Importing sailor permissions pages
 import 'pages/sailor_permissions/sailor_permissions_page.dart' as Permissions;
@@ -74,7 +75,7 @@ class MainApp extends StatelessWidget {
           } else if (snapshot.hasError) {
             return const Center(child: Text('Błąd podczas sprawdzania logowania.'));
           } else {
-            
+
             return snapshot.data! ? const MainPage() : const LoginPage();
           }
         },
@@ -98,6 +99,7 @@ class MainApp extends StatelessWidget {
         Members.InvitesPage.id: (context) => const Members.InvitesPage(),
         Members.RolesPage.id: (context) => const Members.RolesPage(),
         Members.StatusesPage.id: (context) => const Members.StatusesPage(),
+        Members.WantsToJoinPage.id: (context) => const Members.WantsToJoinPage(),
 
         // Sailor permissions module routes
         Permissions.SailorPermissionsPage.id: (context) => const Permissions.SailorPermissionsPage(),

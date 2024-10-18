@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mariner/components/members_components/user.dart';
 
 class InvitesPage extends StatelessWidget {
   static const String id = '/members/invites';
@@ -9,6 +10,9 @@ class InvitesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Zaproszenia'),),
+      body: const Column(
+
+      ),
     );
   }
 }

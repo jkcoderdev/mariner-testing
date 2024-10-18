@@ -16,6 +16,7 @@ import 'package:mariner/pages/members/users_page.dart' as Members;
 import 'package:mariner/pages/members/invites_page.dart' as Members;
 import 'package:mariner/pages/members/roles_page.dart' as Members;
 import 'package:mariner/pages/members/statuses_page.dart' as Members;
+import 'package:mariner/pages/members/wants_to_join_page.dart' as Members;
 
 // Importing sailor permissions pages
 import 'package:mariner/pages/sailor_permissions/sailor_permissions_page.dart' as Permissions;
@@ -25,6 +26,7 @@ const Map < String, List > kSubsections = {
   '/czlonkowie': <Widget>[
     SubsectionButton(icon: Icons.groups, title: 'Użytkownicy', route: Members.UsersPage.id,),
     SubsectionButton(icon: Icons.mail, title: 'Zaproszenia', route: Members.InvitesPage.id,),
+    SubsectionButton(title: 'Prośby o dołączenie', icon: Icons.insert_invitation, route: Members.WantsToJoinPage.id),
     SubsectionButton(icon: Icons.perm_contact_calendar_rounded, title: 'Role', route: Members.RolesPage.id,),
     SubsectionButton(icon: Icons.start, title: 'Statusy', route: Members.StatusesPage.id,)
   ],
