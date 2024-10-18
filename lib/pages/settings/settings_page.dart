@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
-  static const String id = '/ustawienia';
+  static const String id = '/settings';
 
   const SettingsPage({super.key});
 

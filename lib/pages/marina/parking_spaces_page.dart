@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ParkingSpacesPage extends StatelessWidget {
-  static const String id = '/marina';
+  static const String id = '/marina/parking_spaces';
 
   const ParkingSpacesPage({super.key});
 

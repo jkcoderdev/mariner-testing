@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ContributionsPage extends StatelessWidget {
-  static const id = '/contributions';
+  static const id = '/contributions/contributions';
   const ContributionsPage({super.key});
 
   @override

@@ -7,7 +7,31 @@ import 'package:http/http.dart' as http;
 import 'pages/subsections_page.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
-import 'pages/members/users_page.dart';
+
+// Importing contributions pages
+import 'pages/contributions/contributions_page.dart' as Contributions;
+import 'pages/contributions/history_pages.dart' as Contributions;
+import 'pages/contributions/dictionary_page.dart' as Contributions;
+
+// Importing marina pages
+import 'pages/marina/parking_spaces_page.dart' as Marina;
+import 'pages/marina/lockers_page.dart' as Marina;
+
+// Importing members pages
+import 'pages/members/users_page.dart' as Members;
+import 'pages/members/invites_page.dart' as Members;
+import 'pages/members/roles_page.dart' as Members;
+import 'pages/members/statuses_page.dart' as Members;
+
+// Importing sailor permissions pages
+import 'pages/sailor_permissions/sailor_permissions_page.dart' as Permissions;
+import 'pages/sailor_permissions/sailor_permissions_types_page.dart' as Permissions;
+
+// Importing settings pages
+import 'pages/settings/settings_page.dart' as Settings;
+
+// Importing statuses pages
+import 'pages/statuses/statuses_page.dart' as Statuses;
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -60,8 +84,31 @@ class MainApp extends StatelessWidget {
         LoginPage.id: (context) => const LoginPage(),
         SectionsPage.id: (context) => SectionsPage(route: ModalRoute.of(context)!.settings.arguments as String),
 
-        // Admin module routes
-        UsersPage.id: (context) => const UsersPage(),
+        // Contributions module routes
+        Contributions.ContributionsPage.id: (context) => const Contributions.ContributionsPage(),
+        Contributions.DictionaryPage.id: (context) => const Contributions.DictionaryPage(),
+        Contributions.HistoryPage.id: (context) => const Contributions.HistoryPage(),
+
+        // Marina module routes
+        Marina.LockersPage.id: (context) => const Marina.LockersPage(),
+        Marina.ParkingSpacesPage.id: (context) => const Marina.ParkingSpacesPage(),
+
+        // Members module routes
+        Members.UsersPage.id: (context) => const Members.UsersPage(),
+        Members.InvitesPage.id: (context) => const Members.InvitesPage(),
+        Members.RolesPage.id: (context) => const Members.RolesPage(),
+        Members.StatusesPage.id: (context) => const Members.StatusesPage(),
+
+        // Sailor permissions module routes
+        Permissions.SailorPermissionsPage.id: (context) => const Permissions.SailorPermissionsPage(),
+        Permissions.SailorPermissionsTypesPage.id: (context) => const Permissions.SailorPermissionsTypesPage(),
+
+        // Settings module routes
+        Settings.SettingsPage.id: (context) => const Settings.SettingsPage(),
+
+        // Statuses module routes
+        Statuses.StatusesPage.id: (context) => const Statuses.StatusesPage(),
+
 
       },
 

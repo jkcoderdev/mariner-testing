@@ -4,7 +4,7 @@ import 'package:mariner/theme/colors.dart';
 
 class UsersPage extends StatelessWidget {
 
-  static const String id = '/czlonkowie/uzytkownicy';
+  static const String id = '/members/users';
 
   const UsersPage({super.key});
 
