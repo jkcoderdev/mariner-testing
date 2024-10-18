@@ -11,6 +11,12 @@ final ThemeData lightTheme = ThemeData(
     backgroundColor: lightColors['primary']
   ),
   scaffoldBackgroundColor: lightColors['background'],
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+          backgroundColor: lightColors['primary'],
+          foregroundColor: lightColors['textPrimary']
+      )
+  ),
 );
 
 final ThemeData darkTheme = ThemeData(
@@ -18,7 +24,13 @@ final ThemeData darkTheme = ThemeData(
   appBarTheme: AppBarTheme(
     backgroundColor: darkColors['primary']
   ),
-  scaffoldBackgroundColor: darkColors['background']
+  scaffoldBackgroundColor: darkColors['background'],
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: darkColors['primary'],
+        foregroundColor: darkColors['textPrimary']
+      )
+  ),
 );
 
 
