@@ -17,6 +17,9 @@ final ThemeData lightTheme = ThemeData(
           foregroundColor: lightColors['textPrimary']
       )
   ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: lightColors['primary']
+  )
 );
 
 final ThemeData darkTheme = ThemeData(
@@ -31,6 +34,9 @@ final ThemeData darkTheme = ThemeData(
         foregroundColor: darkColors['textPrimary']
       )
   ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: darkColors['primary']
+  )
 );
 
 
