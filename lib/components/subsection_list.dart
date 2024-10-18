@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'subsection_button.dart';
-import 'package:mariner/pages/czlonkowie/users_page.dart';
+import 'package:mariner/pages/members/users_page.dart';
 
 const Map < String, List > kSubsections = {
   '/czlonkowie': <Widget>[
