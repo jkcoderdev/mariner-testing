@@ -11,7 +11,7 @@ Color hsl(double hue, double saturation, double lightness) {
 Map<String, Color> kThemeColorsLight = {
   'primary': const HSLColor.fromAHSL(1.0, 195.0, 0.75, 0.75).toColor(),
   'secondary': const HSLColor.fromAHSL(1.0, 195.0, 0.75, 0.85).toColor(),
-  'special': const HSLColor.fromAHSL(1.0, 30.0, 0.5, 0.8).toColor(),
+  'special': const HSLColor.fromAHSL(1.0, 220.0, 0.5, 0.8).toColor(),
   'textPrimary': const HSLColor.fromAHSL(1.0, 195.0, 0.75, 0.1).toColor(),
   'textSecondary': const HSLColor.fromAHSL(1.0, 195.0, 0.25, 0.5).toColor(),
   'background': const HSLColor.fromAHSL(1.0, 195.0, 0.75, 0.9).toColor()
