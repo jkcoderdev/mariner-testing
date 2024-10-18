@@ -18,7 +18,7 @@ class SectionsPage extends StatelessWidget {
 
     final colors = ThemeColors.of(context);
 
-    final List? buttons = kSubsections[route]?.toList() ?? const [SectionButton(icon: Icons.close, title: 'Brak podsekcji')] ;
+    final List buttons = kSubsections[route]?.toList() ?? const [SectionButton(icon: Icons.close, title: 'Brak podsekcji')] ;
 
     return Scaffold(
         appBar: AppBar(
@@ -31,9 +31,9 @@ class SectionsPage extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
           child: ListView.builder(
-              itemCount: buttons?.length,
+              itemCount: buttons.length,
               itemBuilder: (context, index){
-                final button = buttons?[index];
+                final button = buttons[index];
 
                 return Column(
                   children: [
