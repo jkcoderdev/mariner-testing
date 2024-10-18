@@ -21,9 +21,9 @@ class UsersPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            User(name: 'ra2nek' ),
+            const User(name: 'ra2nek', phone: '+48 333 33 333', pesel: '20337472', email: 'ra4nek@gmail.com',),
             Divider(color: colors['special'],),
-            User(name: 'Andrzej')
+            const User(name: 'Andrzej', phone: '+55 242 422 22', pesel: '24221432',)
         ],
       ),
       )

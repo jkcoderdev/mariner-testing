@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'user_detail.dart';
 
 class User extends StatelessWidget {
-  const User({super.key, required this.name});
+  const User({super.key, required this.name, this.pesel = '* Nie podano *', this.email = '* Nie podano *', this.phone = '* Nie podano *'});
 
   final String name;
+  final String pesel;
+  final String email;
+  final String phone;
 
 
   @override
@@ -20,7 +23,7 @@ class User extends StatelessWidget {
           const Expanded(child: SizedBox()),
           IconButton(onPressed: (){
             showDialog(context: context, builder: (BuildContext context) =>
-            UserDetail(name: name, pesel: '02223344', email: 'ra4nek@gmail.com', phone: '+48 333 33 333',));
+            UserDetail(name: name, pesel: pesel, email: email, phone: phone,));
           }, icon: const Icon(Icons.more_horiz) ),
       
           IconButton(onPressed: (){
