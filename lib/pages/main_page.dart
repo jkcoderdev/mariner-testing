@@ -50,11 +50,13 @@ class MainPage extends StatelessWidget {
       ),
       SectionButtonModel(
         title: 'Statusy',
-        icon: Icons.star
+        icon: Icons.star,
+        route: '/statuses'
       ),
       SectionButtonModel(
         title: 'Ustawienia klubu',
-        icon: Icons.settings
+        icon: Icons.settings,
+        route: '/settings'
       ),
     ];
 
