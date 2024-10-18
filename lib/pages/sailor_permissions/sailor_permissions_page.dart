@@ -33,7 +33,10 @@ class SailorPermissionsPage extends StatelessWidget {
             )
           ],
         )
-      )
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        print('add perm');
+      }, child: const Icon(Icons.add),),
     );
   }
 }
