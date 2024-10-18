@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'pages/main_page.dart';
 import 'pages/login_page.dart';
-import 'pages/administracja/administracja_page.dart';
-import 'pages/organizacja/organizacja_page.dart';
-import 'pages/kadry/kadry_page.dart';
 import 'theme/theme.dart';
 import 'package:http/http.dart' as http;
 import 'pages/subsections_page.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
-import 'pages/administracja/users_page.dart';
+import 'pages/czlonkowie/users_page.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -61,9 +58,6 @@ class MainApp extends StatelessWidget {
       routes: {
         MainPage.id: (context) => const MainPage(),
         LoginPage.id: (context) => const LoginPage(),
-        AdministracjaPage.id: (context) => const AdministracjaPage(),
-        OrganizacjaPage.id: (context) => const OrganizacjaPage(),
-        KadryPage.id: (context) => const KadryPage(),
         SectionsPage.id: (context) => SectionsPage(route: ModalRoute.of(context)!.settings.arguments as String),
 
         // Admin module routes

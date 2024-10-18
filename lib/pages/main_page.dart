@@ -25,33 +25,28 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const List<SectionButtonModel> buttons = [
       SectionButtonModel(
-        title: 'Administracja',
+        title: 'Członokowie',
         icon: Icons.person,
-        route: '/administracja',
-        hasSubSec: true
-      ),
-      SectionButtonModel(
-        title: 'Organizacja',
-        icon: Icons.pending_actions,
-        route: '/organizacja'
-      ),
-      SectionButtonModel(
-        title: 'Wydarzenia',
-        icon: Icons.people,
-        route: '/wydarzenia',
+        route: '/czlonkowie',
         hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Składki',
-        icon: Icons.monetization_on
+        icon: Icons.monetization_on,
+        route: '/skladki',
+        hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Uprawnienia żeglarskie',
-        icon: Icons.note_add
+        icon: Icons.note_add,
+        route: '/uprawnienia_zeglarskie',
+        hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Marina',
-        icon: Icons.waves
+        icon: Icons.waves,
+        route: '/marina',
+        hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Statusy',

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mariner/components/admin_components/user.dart';
+import 'package:mariner/components/members_components/user.dart';
 import 'package:mariner/theme/colors.dart';
 
 class UsersPage extends StatelessWidget {
 
-  static const String id = '/administracja/uzytkownicy';
+  static const String id = '/czlonkowie/uzytkownicy';
 
   const UsersPage({super.key});
 
