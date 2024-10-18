@@ -18,16 +18,20 @@ class User extends StatelessWidget {
           Icon(Icons.person),
           const SizedBox(width: 10.0),
           Text(name),
-      
+
           const Expanded(child: SizedBox()),
           IconButton(onPressed: (){
             showDialog(context: context, builder: (BuildContext context) =>
-            UserDetail(name: name, pesel: pesel, email: email, phone: phone,));
+                UserDetail(name: name, pesel: pesel, email: email, phone: phone,));
           }, icon: const Icon(Icons.more_horiz) ),
 
           IconButton(onPressed: (){
-            print('delete user: ' + name);
-          }, icon: const Icon(Icons.delete) )
+            print('approve request: ' + name);
+          }, icon: const Icon(Icons.done) ),
+
+          IconButton(onPressed: (){
+            print('delete request: ' + name);
+          }, icon: const Icon(Icons.close) )
         ],
       ),
     );
