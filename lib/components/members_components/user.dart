@@ -12,14 +12,14 @@ class User extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: (){ print('owo'); },
+
 
       child: Row(
         children: [
           Icon(Icons.person),
           const SizedBox(width: 10.0),
-          Text(name),
-      
-          const Expanded(child: SizedBox()),
+          Expanded(child: Text(name)),
           IconButton(onPressed: (){
             showDialog(context: context, builder: (BuildContext context) =>
             UserDetail(name: name, pesel: pesel, email: email, phone: phone,));
