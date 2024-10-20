@@ -22,17 +22,17 @@ class AppRouter extends RootStackRouter {
       path: '/',
       guards: [AuthGuard()],
       initial: true,
+    ),
+    AutoRoute(
+      page: ModuleRoute.page,
+      path: '/members',
+      guards: [AuthGuard()],
+      title: (context, routeData) => 'Członkowie',
       children: [
         AutoRoute(
-          page: ModuleRoute.page,
-          path: 'members',
-          children: [
-            AutoRoute(
-              page: UsersRoute.page,
-              path: 'users',
-              initial: true
-            )
-          ]
+          page: UsersRoute.page,
+          path: 'users',
+          initial: true
         )
       ]
     ),

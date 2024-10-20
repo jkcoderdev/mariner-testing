@@ -7,9 +7,11 @@ class ModulePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final routeData = RouteData.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('${context.routeData}'),
+        title: Text(routeData.title(context)),
       ),
       body: const AutoRouter(),
     );
