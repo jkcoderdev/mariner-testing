@@ -8,8 +8,10 @@ class StatusesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Statusy'),),
-      body: const Center( child: Text('Statusy'),),
+      appBar: AppBar(
+        title: const Text('Statusy')
+      ),
+      body: const Center(child: Text('Statusy')),
     );
   }
 }

@@ -8,7 +8,9 @@ class SailorPermissionsTypesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Rodzaje patentów'),),
+      appBar: AppBar(
+        title: const Text('Rodzaje patentów')
+      ),
     );
   }
 }
