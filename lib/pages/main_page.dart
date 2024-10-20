@@ -12,7 +12,7 @@ import 'package:mariner/pages/subsections_page.dart';
 
 @RoutePage()
 class MainPage extends StatelessWidget {
-  static const String id = '/main';
+  // static const String id = '/main';
 
   const MainPage({super.key});
 
@@ -22,36 +22,36 @@ class MainPage extends StatelessWidget {
       SectionButtonModel(
         title: 'Członkowie',
         icon: Icons.person,
-        route: '/czlonkowie',
+        // route: '/czlonkowie',
         hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Składki',
         icon: Icons.monetization_on,
-        route: '/skladki',
+        // route: '/skladki',
         hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Uprawnienia żeglarskie',
         icon: Icons.note_add,
-        route: '/uprawnienia_zeglarskie',
+        // route: '/uprawnienia_zeglarskie',
         hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Marina',
         icon: Icons.waves,
-        route: '/marina',
+        // route: '/marina',
         hasSubSec: true
       ),
       SectionButtonModel(
         title: 'Statusy',
         icon: Icons.star,
-        route: '/statuses'
+        // route: '/statuses'
       ),
       SectionButtonModel(
         title: 'Ustawienia klubu',
         icon: Icons.settings,
-        route: '/settings'
+        // route: '/settings'
       ),
     ];
 
@@ -72,10 +72,12 @@ class MainPage extends StatelessWidget {
               Icons.logout,
               color: colors['textPrimary'],
             ),
-            onPressed: () async {
-              final prefs = await SharedPreferences.getInstance();
-              prefs.setBool('loggedIn', false);
-              Navigator.pushReplacementNamed(context, '/login');
+            onPressed: () {
+              // final prefs = await SharedPreferences.getInstance();
+              // prefs.setBool('loggedIn', false);
+              // Navigator.pushReplacementNamed(context, '/login');
+              final router = AutoRouter.of(context);
+              router.replaceNamed('/logout');
             },
           ),
         ],
@@ -97,10 +99,14 @@ class MainPage extends StatelessWidget {
               title: button.title,
               icon: button.icon,
               onPressed: () {
-                if (button.hasSubSec && button.hasRoute) {
-                  Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
-                } else if (!button.hasSubSec && button.hasRoute) {
-                  Navigator.pushNamed(context, button.route.toString() );
+                // if (button.hasSubSec && button.hasRoute) {
+                //   Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
+                // } else if (!button.hasSubSec && button.hasRoute) {
+                //   Navigator.pushNamed(context, button.route.toString() );
+                // }
+                if (button.hasRoute) {
+                  final router = AutoRouter.of(context);
+                  router.pushNamed(button.route!);
                 }
               },
             );

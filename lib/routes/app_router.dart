@@ -5,6 +5,7 @@ import 'package:mariner/routes/guards/auth_guard.dart';
 
 import 'package:mariner/pages/main_page.dart';
 import 'package:mariner/pages/login_page.dart';
+import 'package:mariner/pages/logout_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -21,6 +22,10 @@ class AppRouter extends RootStackRouter {
     AutoRoute(
       page: LoginRoute.page,
       path: '/login',
+    ),
+    AutoRoute(
+      page: LogoutRoute.page,
+      path: '/logout',
     )
   ];
 }
