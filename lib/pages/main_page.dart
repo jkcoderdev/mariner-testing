@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:mariner/theme/colors.dart';
@@ -9,13 +10,7 @@ import 'package:mariner/components/dashboard/section_button.dart';
 import 'package:mariner/components/side_menu.dart';
 import 'package:mariner/pages/subsections_page.dart';
 
-class BtnModel {
-  BtnModel({required this.title, required this.icon});
-
-  final String title;
-  final IconData icon;
-}
-
+@RoutePage()
 class MainPage extends StatelessWidget {
   static const String id = '/main';
 
