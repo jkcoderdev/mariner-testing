@@ -25,7 +25,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const List<SectionButtonModel> buttons = [
       SectionButtonModel(
-        title: 'Członokowie',
+        title: 'Członkowie',
         icon: Icons.person,
         route: '/czlonkowie',
         hasSubSec: true
