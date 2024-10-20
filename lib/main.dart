@@ -1,12 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
+
+import 'theme/theme.dart';
+
 import 'pages/main_page.dart';
 import 'pages/login_page.dart';
-import 'theme/theme.dart';
-import 'package:http/http.dart' as http;
 import 'pages/subsections_page.dart';
-import 'dart:io';
-import 'package:provider/provider.dart';
 
 // Importing contributions pages
 import 'pages/contributions/contributions_page.dart' as Contributions;
@@ -42,8 +45,8 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
-void main() {
 
+void main() {
   HttpOverrides.global = MyHttpOverrides();
   runApp(MultiProvider( // create the provider
     providers: [
@@ -58,16 +61,17 @@ void main() {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  Future<bool> isLoggedIn() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('loggedIn') ?? false;
+  }
+
   @override
-
-
-
   Widget build(BuildContext context) {
-
     return MaterialApp(
       title: 'Mariner',
-      home: FutureBuilder<bool>(
 
+      home: FutureBuilder<bool>(
         future: isLoggedIn(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -80,6 +84,7 @@ class MainApp extends StatelessWidget {
           }
         },
       ),
+
       routes: {
         MainPage.id: (context) => const MainPage(),
         LoginPage.id: (context) => const LoginPage(),
@@ -110,19 +115,11 @@ class MainApp extends StatelessWidget {
 
         // Statuses module routes
         Statuses.StatusesPage.id: (context) => const Statuses.StatusesPage(),
-
-
       },
 
       theme: Provider.of<ThemeDataProvider>(context).getThemeData(),
       darkTheme: Provider.of<ThemeDataProvider>(context).getThemeData(reverse: true),
-
     );
-  }
-
-  Future<bool> isLoggedIn() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('loggedIn') ?? false;
   }
 }
 

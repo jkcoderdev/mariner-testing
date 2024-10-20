@@ -10,10 +10,10 @@ import 'package:mariner/components/side_menu.dart';
 import 'package:mariner/pages/subsections_page.dart';
 
 class BtnModel {
+  BtnModel({required this.title, required this.icon});
+
   final String title;
   final IconData icon;
-
-  BtnModel({required this.title, required this.icon});
 }
 
 class MainPage extends StatelessWidget {
@@ -102,12 +102,11 @@ class MainPage extends StatelessWidget {
               title: button.title,
               icon: button.icon,
               onPressed: () {
-                if(button.hasSubSec && button.hasRoute){
-                    Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
-                } else if(!button.hasSubSec && button.hasRoute){
+                if (button.hasSubSec && button.hasRoute) {
+                  Navigator.pushNamed(context, SectionsPage.id, arguments: button.route);
+                } else if (!button.hasSubSec && button.hasRoute) {
                   Navigator.pushNamed(context, button.route.toString() );
                 }
-
               },
             );
           },
