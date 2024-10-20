@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
       SectionButtonModel(
         title: 'Członkowie',
         icon: Icons.person,
-        // route: '/czlonkowie',
+        route: '/members',
         hasSubSec: true
       ),
       SectionButtonModel(

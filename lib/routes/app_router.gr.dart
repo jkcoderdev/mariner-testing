@@ -92,3 +92,41 @@ class MainRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [ModulePage]
+class ModuleRoute extends PageRouteInfo<void> {
+  const ModuleRoute({List<PageRouteInfo>? children})
+      : super(
+          ModuleRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ModuleRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const ModulePage();
+    },
+  );
+}
+
+/// generated route for
+/// [UsersPage]
+class UsersRoute extends PageRouteInfo<void> {
+  const UsersRoute({List<PageRouteInfo>? children})
+      : super(
+          UsersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UsersRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const UsersPage();
+    },
+  );
+}
