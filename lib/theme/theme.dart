@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'colors.dart';
 import 'package:provider/provider.dart';
+
+import 'colors.dart';
 
 final lightColors = ThemeColors.light;
 final darkColors = ThemeColors.dark;
@@ -40,12 +41,11 @@ final ThemeData darkTheme = ThemeData(
 );
 
 
-class ThemeDataProvider extends ChangeNotifier{
+class ThemeDataProvider extends ChangeNotifier {
   bool _isDarkMode = false;
   bool _reverse = false;
 
   ThemeData getThemeData({bool reverse = false}) {
-
     if(!reverse) {
       _reverse = false;
       return _isDarkMode ? darkTheme : lightTheme;
@@ -55,19 +55,20 @@ class ThemeDataProvider extends ChangeNotifier{
     }
   }
   
-  IconData getThemeIcon(){
-    if(!_reverse) { return _isDarkMode ? Icons.light_mode : Icons.dark_mode; }
-    else { return !_isDarkMode ? Icons.light_mode : Icons.dark_mode; }
-
+  IconData getThemeIcon() {
+    if (!_reverse) {
+      return _isDarkMode ? Icons.light_mode : Icons.dark_mode;
+    } else {
+      return !_isDarkMode ? Icons.light_mode : Icons.dark_mode;
+    }
   }
 
-  void switchTheme(){
+  void switchTheme() {
     _isDarkMode = !_isDarkMode;
     notifyListeners();
   }
 
-  void initTheme(BuildContext context){
+  void initTheme(BuildContext context) {
     _isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
   }
-
 }
