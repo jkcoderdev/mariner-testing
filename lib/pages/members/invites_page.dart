@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mariner/components/members_components/user.dart';
+import 'package:mariner/components/members/user.dart';
 
 class InvitesPage extends StatelessWidget {
   static const String id = '/members/invites';

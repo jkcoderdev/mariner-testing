@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mariner/components/members_components/user_wants_to_join.dart';
+import 'package:mariner/components/members/user_wants_to_join.dart';
 
 class WantsToJoinPage extends StatelessWidget {
   static const String id = '/members/wants_to_join';

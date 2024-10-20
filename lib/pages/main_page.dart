@@ -5,7 +5,7 @@ import 'package:mariner/theme/colors.dart';
 
 import 'package:mariner/models/section_button_model.dart';
 
-import 'package:mariner/components/dashboard_components/section_button.dart';
+import 'package:mariner/components/dashboard/section_button.dart';
 import 'package:mariner/components/side_menu.dart';
 import 'package:mariner/pages/subsections_page.dart';
 

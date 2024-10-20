@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:mariner/theme/colors.dart';
 
-import 'package:mariner/components/dashboard_components/section_button.dart';
-import 'package:mariner/components/subsections_components/subsection_button.dart';
-import 'package:mariner/components/subsections_components/subsection_list.dart';
+import 'package:mariner/components/dashboard/section_button.dart';
+import 'package:mariner/components/subsections/subsection_button.dart';
+import 'package:mariner/components/subsections/subsection_list.dart';
 
 import 'package:mariner/models/section_button_model.dart';
 
